@@ -55,7 +55,7 @@ app.post("/upload", (req, res) => {
 
 })
 
-app.get("/books",async (req,res)=>{
+app.get("/",async (req,res)=>{
     const dataToSend= await booksApiModel.find();
     res.json(dataToSend);
 })
