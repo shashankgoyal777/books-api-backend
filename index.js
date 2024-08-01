@@ -26,6 +26,9 @@ mongoose.connect("mongodb+srv://"+username+":"+password+"@cluster0.rz07emt.mongo
 
 const booksApiSchema = new mongoose.Schema(
     {
+        id:{
+            type:String,
+        },
         author: {
             type: String,
         },
@@ -56,6 +59,6 @@ app.post("/upload", (req, res) => {
 })
 
 app.get("/",async (req,res)=>{
-    const dataToSend= await booksApiModel.find();
+    const dataToSend= await booksApiModel.find().select("-_id -__v");
     res.json(dataToSend);
 })
