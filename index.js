@@ -27,7 +27,7 @@ mongoose.connect("mongodb+srv://"+username+":"+password+"@cluster0.rz07emt.mongo
 const booksApiSchema = new mongoose.Schema(
     {
         id:{
-            type:String,
+            type:Number,
         },
         author: {
             type: String,
